@@ -47,27 +47,23 @@ export default function Home() {
             {[
               {
                 title: "Web Básico",
-                price: "S/ 499",
-                desc: "Landing page en 5 días",
+                desc: "Landing page profesional lista en 5 días",
                 href: "/servicios/web-basico",
               },
               {
                 title: "Web Profesional",
-                price: "S/ 1,299",
-                desc: "Web corporativa completa",
+                desc: "Web corporativa completa con panel administrador",
                 href: "/servicios/web-profesional",
                 popular: true,
               },
               {
                 title: "Automatización",
-                price: "S/ 2,499+",
-                desc: "Procesos optimizados",
+                desc: "Automatiza procesos repetitivos de tu negocio",
                 href: "/servicios/automatizacion",
               },
               {
                 title: "CRM",
-                price: "S/ 99/mes",
-                desc: "Gestión comercial",
+                desc: "Gestiona clientes, ventas y seguimiento",
                 href: "/servicios/crm",
               },
             ].map((s) => (
@@ -87,9 +83,6 @@ export default function Home() {
                 )}
                 <div className="text-xl font-bold text-gray-900 mb-1">
                   {s.title}
-                </div>
-                <div className="text-brand-600 font-bold text-lg mb-2">
-                  {s.price}
                 </div>
                 <p className="text-sm text-gray-500">{s.desc}</p>
               </Link>

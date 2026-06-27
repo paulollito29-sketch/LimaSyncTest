@@ -1,76 +1,13 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { FiCheck, FiArrowRight } from "react-icons/fi"
+import { plans } from "@/lib/data"
 
 export const metadata: Metadata = {
   title: "Planes",
   description:
     "Planes accesibles para PYMES peruanas. Desde S/ 499. Web, automatización y CRM sin costos ocultos.",
 }
-
-const plans = [
-  {
-    name: "Web Básico",
-    price: "S/ 499",
-    type: "pago único",
-    desc: "Presencia digital inmediata",
-    features: [
-      "Landing page responsive",
-      "Formulario de contacto",
-      "Hosting 6 meses gratis",
-      "Dominio .pe incluido",
-    ],
-    cta: "Lo quiero",
-    href: "/servicios/web-basico",
-    popular: false,
-  },
-  {
-    name: "Web Profesional",
-    price: "S/ 1,299",
-    type: "pago único",
-    desc: "Web corporativa completa",
-    features: [
-      "Hasta 10 páginas",
-      "Panel administrador",
-      "Blog + galería",
-      "SEO optimizado",
-      "Capacitación incluida",
-    ],
-    cta: "Lo quiero",
-    href: "/servicios/web-profesional",
-    popular: true,
-  },
-  {
-    name: "Automatización",
-    price: "S/ 2,499",
-    type: "desde",
-    desc: "Procesos optimizados",
-    features: [
-      "Diagnóstico gratuito",
-      "Flujos personalizados",
-      "Integración de sistemas",
-      "Soporte 3 meses",
-    ],
-    cta: "Cotizar",
-    href: "/servicios/automatizacion",
-    popular: false,
-  },
-  {
-    name: "CRM",
-    price: "S/ 99",
-    type: "/mes",
-    desc: "Gestión comercial completa",
-    features: [
-      "Pipeline de ventas",
-      "Automatización WhatsApp",
-      "Reportes en tiempo real",
-      "Soporte prioritario",
-    ],
-    cta: "Probar gratis",
-    href: "/servicios/crm",
-    popular: false,
-  },
-]
 
 export default function PlanesPage() {
   return (

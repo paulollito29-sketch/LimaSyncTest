@@ -1,60 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FiGlobe, FiCode, FiSettings, FiUsers } from "react-icons/fi"
-
-const services = [
-  {
-    icon: FiGlobe,
-    title: "Web Básico",
-    price: "S/ 499",
-    desc: "Landing page profesional lista en 5 días. Ideal para negocios que quieren presencia digital inmediata.",
-    features: [
-      "Diseño responsive",
-      "Formulario de contacto",
-      "Hosting 6 meses gratis",
-      "Dominio .pe incluido",
-    ],
-  },
-  {
-    icon: FiCode,
-    title: "Web Profesional",
-    price: "S/ 1,299",
-    desc: "Web corporativa completa con panel administrativo. Perfecta para empresas que quieren vender online.",
-    features: [
-      "Hasta 10 páginas",
-      "Panel administrador",
-      "Blog integrado",
-      "Galería de imágenes",
-      "SEO optimizado",
-    ],
-    popular: true,
-  },
-  {
-    icon: FiSettings,
-    title: "Automatización Empresarial",
-    price: "Desde S/ 2,499",
-    desc: "Automatiza procesos repetitivos de tu negocio: facturación, inventarios, reportes y más.",
-    features: [
-      "Diagnóstico gratuito",
-      "Flujos personalizados",
-      "Integración con sistemas",
-      "Soporte 3 meses",
-    ],
-  },
-  {
-    icon: FiUsers,
-    title: "CRM y Gestión Comercial",
-    price: "Desde S/ 99/mes",
-    desc: "Gestiona clientes, ventas y seguimiento desde un solo lugar. Recupera leads y cierra más negocios.",
-    features: [
-      "Pipeline de ventas",
-      "Automatización WhatsApp",
-      "Reportes en tiempo real",
-      "Soporte prioritario",
-    ],
-  },
-]
+import Link from "next/link"
+import { FiArrowRight } from "react-icons/fi"
+import { services } from "@/lib/data"
 
 export default function Services() {
   return (
@@ -81,7 +30,7 @@ export default function Services() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => (
             <motion.div
-              key={i}
+              key={service.slug}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -113,14 +62,11 @@ export default function Services() {
               <h3 className="text-lg font-bold text-gray-900 mb-1">
                 {service.title}
               </h3>
-              <p className="text-2xl font-bold text-brand-600 mb-3">
-                {service.price}
-              </p>
               <p className="text-sm text-gray-500 leading-relaxed mb-5">
                 {service.desc}
               </p>
-              <ul className="space-y-2.5">
-                {service.features.map((f, j) => (
+              <ul className="space-y-2.5 mb-6">
+                {service.features.slice(0, 3).map((f, j) => (
                   <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
                     <svg
                       className="size-4 text-brand-500 mt-0.5 shrink-0"
@@ -139,6 +85,12 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
+              <Link
+                href="/planes"
+                className="flex items-center justify-center gap-2 bg-brand-600 text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-brand-700 transition-all active:scale-[0.98]"
+              >
+                Ver planes <FiArrowRight className="size-4" />
+              </Link>
             </motion.div>
           ))}
         </div>
