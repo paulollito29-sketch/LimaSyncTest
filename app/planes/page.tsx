@@ -50,10 +50,21 @@ export default function PlanesPage() {
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-3xl font-bold text-brand-600">
-                    {plan.price}
-                  </span>
-                  <span className="text-sm text-gray-400">{plan.type}</span>
+                  {plan.price === "Cotizar" ? (
+                    <Link
+                      href="/contacto"
+                      className="inline-flex items-center gap-2 bg-brand-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-brand-700 transition-all"
+                    >
+                      Cotizar <FiArrowRight className="size-4" />
+                    </Link>
+                  ) : (
+                    <>
+                      <span className="text-3xl font-bold text-brand-600 whitespace-nowrap">
+                        {plan.price}
+                      </span>
+                      <span className="text-sm text-gray-400">{plan.type}</span>
+                    </>
+                  )}
                 </div>
                 <p className="text-sm text-gray-500 mb-5">{plan.desc}</p>
                 <ul className="space-y-2.5 mb-8">

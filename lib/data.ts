@@ -12,6 +12,7 @@ export interface ServiceInfo {
   longDesc: string
   features: string[]
   ideal: string
+  image: string
   popular?: boolean
 }
 
@@ -38,12 +39,13 @@ export const services: ServiceInfo[] = [
     features: [
       "Diseño responsive (se ve bien en celular y computadora)",
       "Formulario de contacto integrado",
-      "Hosting y dominio .pe incluidos por 6 meses",
+      "Hosting 2 meses gratis",
       "Optimización básica SEO",
       "Integración con WhatsApp",
       "1 ronda de revisiones",
     ],
     ideal: "Emprendedores, restaurantes, talleres, profesionales independientes.",
+    image: "/images/Web_design_development_process_L…_202606232142.jpeg",
   },
   {
     slug: "web-profesional",
@@ -65,6 +67,7 @@ export const services: ServiceInfo[] = [
       "Capacitación del equipo",
     ],
     ideal: "Empresas en crecimiento, clínicas, colegios, tiendas online.",
+    image: "/images/Efficiency_and_productivity_for_small_202606232142.jpeg",
     popular: true,
   },
   {
@@ -85,6 +88,7 @@ export const services: ServiceInfo[] = [
       "Soporte y mantenimiento 3 meses",
     ],
     ideal: "Empresas con procesos manuales que quieren escalar sin contratar más personal.",
+    image: "/images/Visual_representation_of_business_automation_202606232142.jpeg",
   },
   {
     slug: "crm",
@@ -104,6 +108,7 @@ export const services: ServiceInfo[] = [
       "Soporte prioritario 24/7",
     ],
     ideal: "Equipos de ventas, asesores inmobiliarios, consultores, distribuidoras.",
+    image: "/images/Organized_customer_management_pr…_202606232142.jpeg",
   },
 ]
 
@@ -116,7 +121,7 @@ export const plans: PlanInfo[] = [
     features: [
       "Landing page responsive",
       "Formulario de contacto",
-      "Hosting 6 meses gratis",
+      "Hosting 2 meses gratis",
       "Dominio .pe incluido",
     ],
     cta: "Lo quiero",
@@ -156,8 +161,8 @@ export const plans: PlanInfo[] = [
   },
   {
     name: "CRM",
-    price: "S/ 99",
-    type: "/mes",
+    price: "Cotizar",
+    type: "desde",
     desc: "Gestión comercial completa",
     features: [
       "Pipeline de ventas",
@@ -165,7 +170,7 @@ export const plans: PlanInfo[] = [
       "Reportes en tiempo real",
       "Soporte prioritario",
     ],
-    cta: "Probar gratis",
+    cta: "Ver más",
     href: "/servicios/crm",
     popular: false,
   },

@@ -104,7 +104,7 @@ export default function Hero() {
             <div className="absolute -inset-6 bg-gradient-to-r from-brand-500/20 to-brand-400/20 rounded-3xl blur-3xl" />
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src="/images/Business_owner_smiling_at_laptop_202606232142.jpeg"
+                src="/images/Efficiency_and_productivity_for_small_202606232142.jpeg"
                 alt="Empresario peruano transformando su negocio con tecnología"
                 className="w-full h-auto object-cover"
               />

@@ -53,10 +53,26 @@ export default function ServiciosPage() {
                 <p className="text-lg text-gray-600 leading-relaxed mb-4">
                   {service.longDesc}
                 </p>
-                <p className="text-sm text-gray-500 mb-8">
+                <p className="text-sm text-gray-500 mb-6">
                   <strong className="text-gray-700">Ideal para:</strong>{" "}
                   {service.ideal}
                 </p>
+                <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-8">
+                  <h3 className="font-bold text-gray-900 text-sm mb-4">
+                    Qué incluye
+                  </h3>
+                  <ul className="space-y-3">
+                    {service.features.map((f) => (
+                      <li
+                        key={f}
+                        className="flex items-start gap-3 text-sm text-gray-600"
+                      >
+                        <FiCheck className="size-4 text-brand-500 mt-0.5 shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 <Link
                   href="/planes"
                   className="inline-flex items-center gap-2 bg-brand-600 text-white px-7 py-3.5 rounded-xl text-base font-semibold hover:bg-brand-700 transition-all hover:shadow-lg hover:shadow-brand-600/25 active:scale-[0.97]"
@@ -65,21 +81,12 @@ export default function ServiciosPage() {
                 </Link>
               </div>
 
-              <div className="flex-1 w-full bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                <h3 className="font-bold text-gray-900 text-lg mb-5">
-                  Qué incluye
-                </h3>
-                <ul className="space-y-3.5">
-                  {service.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-start gap-3 text-gray-600"
-                    >
-                      <FiCheck className="size-5 text-brand-500 mt-0.5 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex-1 w-full">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-auto rounded-2xl object-cover"
+                />
               </div>
             </div>
           ))}
